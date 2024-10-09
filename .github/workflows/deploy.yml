@@ -96,7 +96,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: snowplow/scala-stream-collector-${{ matrix.platform }}${{ matrix.suffix }}
+          images: howdygo/scala-stream-collector-${{ matrix.platform }}${{ matrix.suffix }}
           tags: |
             type=raw,value=latest,enable=${{ !contains(steps.ver.outputs.project_version, 'rc') }}
             type=raw,value=latest-focal,enable=${{ !contains(steps.ver.outputs.project_version, 'rc') }}
@@ -109,7 +109,7 @@ jobs:
         id: distroless-meta
         uses: docker/metadata-action@v3
         with:
-          images: snowplow/scala-stream-collector-${{ matrix.platform }}${{ matrix.suffix }}
+          images: howdygo/scala-stream-collector-${{ matrix.platform }}${{ matrix.suffix }}
           tags: |
             type=raw,value=latest-distroless,enable=${{ !contains(steps.ver.outputs.project_version, 'rc') }}
             type=raw,value=${{ steps.ver.outputs.project_version }}-distroless
