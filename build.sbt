@@ -138,6 +138,7 @@ lazy val kinesisSettings =
 lazy val kinesis = project
   .settings(kinesisSettings)
   .enablePlugins(JavaAppPackaging, SnowplowDockerPlugin, BuildInfoPlugin)
+  .settings(Docker / dockerRepository := Some("howdygo"))
   .dependsOn(core % "test->test;compile->compile;it->it")
   .configs(IntegrationTest)
 
@@ -146,6 +147,7 @@ lazy val kinesisDistroless = project
   .settings(sourceDirectory := (kinesis / sourceDirectory).value)
   .settings(kinesisSettings)
   .enablePlugins(JavaAppPackaging, SnowplowDistrolessDockerPlugin, BuildInfoPlugin)
+  .settings(Docker / dockerRepository := Some("howdygo"))
   .dependsOn(core % "test->test;compile->compile;it->it")
   .configs(IntegrationTest)
 
@@ -162,6 +164,7 @@ lazy val sqsSettings =
 lazy val sqs = project
   .settings(sqsSettings)
   .enablePlugins(JavaAppPackaging, SnowplowDockerPlugin, BuildInfoPlugin)
+  .settings(Docker / dockerRepository := Some("howdygo"))
   .dependsOn(core % "test->test;compile->compile")
 
 lazy val sqsDistroless = project
@@ -169,6 +172,7 @@ lazy val sqsDistroless = project
   .settings(sourceDirectory := (sqs / sourceDirectory).value)
   .settings(sqsSettings)
   .enablePlugins(JavaAppPackaging, SnowplowDistrolessDockerPlugin, BuildInfoPlugin)
+  .settings(Docker / dockerRepository := Some("howdygo"))
   .dependsOn(core % "test->test;compile->compile")
 
 lazy val pubsubSettings =
@@ -189,6 +193,7 @@ lazy val pubsubSettings =
 lazy val pubsub = project
   .settings(pubsubSettings)
   .enablePlugins(JavaAppPackaging, SnowplowDockerPlugin, BuildInfoPlugin)
+  .settings(Docker / dockerRepository := Some("howdygo"))
   .dependsOn(core % "test->test;compile->compile;it->it")
   .configs(IntegrationTest)
 
@@ -197,6 +202,7 @@ lazy val pubsubDistroless = project
   .settings(sourceDirectory := (pubsub / sourceDirectory).value)
   .settings(pubsubSettings)
   .enablePlugins(JavaAppPackaging, SnowplowDistrolessDockerPlugin, BuildInfoPlugin)
+  .settings(Docker / dockerRepository := Some("howdygo"))
   .dependsOn(core % "test->test;compile->compile;it->it")
   .configs(IntegrationTest)
 
@@ -210,6 +216,7 @@ lazy val kafkaSettings =
 lazy val kafka = project
   .settings(kafkaSettings)
   .enablePlugins(JavaAppPackaging, SnowplowDockerPlugin, BuildInfoPlugin)
+  .settings(Docker / dockerRepository := Some("howdygo"))
   .dependsOn(core % "test->test;compile->compile")
 
 lazy val kafkaDistroless = project
@@ -217,6 +224,7 @@ lazy val kafkaDistroless = project
   .settings(sourceDirectory := (kafka / sourceDirectory).value)
   .settings(kafkaSettings)
   .enablePlugins(JavaAppPackaging, SnowplowDistrolessDockerPlugin, BuildInfoPlugin)
+  .settings(Docker / dockerRepository := Some("howdygo"))
   .dependsOn(core % "test->test;compile->compile")
 
 lazy val nsqSettings =
@@ -233,6 +241,7 @@ lazy val nsqSettings =
 lazy val nsq = project
   .settings(nsqSettings)
   .enablePlugins(JavaAppPackaging, SnowplowDockerPlugin, BuildInfoPlugin)
+  .settings(Docker / dockerRepository := Some("howdygo"))
   .dependsOn(core % "test->test;compile->compile")
 
 lazy val nsqDistroless = project
@@ -240,6 +249,7 @@ lazy val nsqDistroless = project
   .settings(sourceDirectory := (nsq / sourceDirectory).value)
   .settings(nsqSettings)
   .enablePlugins(JavaAppPackaging, SnowplowDistrolessDockerPlugin, BuildInfoPlugin)
+  .settings(Docker / dockerRepository := Some("howdygo"))
   .dependsOn(core % "test->test;compile->compile")
 
 lazy val stdoutSettings =
@@ -251,6 +261,7 @@ lazy val stdoutSettings =
 lazy val stdout = project
   .settings(stdoutSettings)
   .enablePlugins(JavaAppPackaging, SnowplowDockerPlugin, BuildInfoPlugin)
+  .settings(Docker / dockerRepository := Some("howdygo"))
   .dependsOn(core % "test->test;compile->compile")
 
 lazy val stdoutDistroless = project
@@ -258,6 +269,7 @@ lazy val stdoutDistroless = project
   .settings(sourceDirectory := (stdout / sourceDirectory).value)
   .settings(stdoutSettings)
   .enablePlugins(JavaAppPackaging, SnowplowDistrolessDockerPlugin, BuildInfoPlugin)
+  .settings(Docker / dockerRepository := Some("howdygo"))
   .dependsOn(core % "test->test;compile->compile")
 
 lazy val rabbitmqSettings =
@@ -270,6 +282,7 @@ lazy val rabbitmqSettings =
 lazy val rabbitmq = project
   .settings(rabbitmqSettings)
   .enablePlugins(JavaAppPackaging, SnowplowDockerPlugin, BuildInfoPlugin)
+  .settings(Docker / dockerRepository := Some("howdygo"))
   .dependsOn(core % "test->test;compile->compile")
 
 lazy val rabbitmqDistroless = project
@@ -277,4 +290,5 @@ lazy val rabbitmqDistroless = project
   .settings(sourceDirectory := (rabbitmq / sourceDirectory).value)
   .settings(rabbitmqSettings)
   .enablePlugins(JavaAppPackaging, SnowplowDistrolessDockerPlugin, BuildInfoPlugin)
+  .settings(Docker / dockerRepository := Some("howdygo"))
   .dependsOn(core % "test->test;compile->compile")
